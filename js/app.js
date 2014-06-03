@@ -15,6 +15,7 @@ $(document).ready(function(){
 		playHadouken();
 		$('.ryu-ready').hide();
 		$('.ryu-cool').hide();
+		$('.ryu-still').hide();
 		$('.ryu-throwing').show();
 		$('.hadouken').show()
 		$('.hadouken').finish().show()
@@ -29,6 +30,7 @@ $(document).ready(function(){
 	.mouseup(function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-cool').hide();
+		$('.ryu-still').hide();
 		$('.ryu-ready').show();
 		// ryu goes back to his ready position
 	})
@@ -43,13 +45,14 @@ $(document).ready(function(){
 	})
 
 	.keyup(function(){ //how do I get ryu-ready pose to show if mouse in div when releasing x?
-		if (event.which == 88 ) {
+		if (event.which === 88 ) {
 		$('.ryu-cool').hide();
+		$('.ryu-ready').hide();
+		$('.ryu-throwing').hide();
 		$('.ryu-still').show();
 		console.log('yep');
 		}
 	})
-
 });
 
 function playHadouken () {
